@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway
+    
+product-service:
+  ribbon:
+    ConnectTimeout: 10000
+    ReadTimeout: 30000
+ 
+hystrix:
+  command:
+    order-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 100000  
+    product-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 100000
+            
+            
+order-service:
+  ribbon:
+    ConnectTimeout: 10000
+    ReadTimeout: 30000
